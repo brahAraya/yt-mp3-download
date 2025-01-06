@@ -18,11 +18,11 @@ To run this program on Windows, you must clone this repo in a [WSL](https://lear
 ### example-with-venv.bat
 ```batch
 @echo off
-wsl --exec bash -c "source /home/user/.../yt-download/venv/bin/activate && python3 /home/user/.../yt-download/script.py"
+wsl --exec bash -c "source /home/user/.../yt-mp3-download/venv/bin/activate && python3 /home/user/.../yt-mp3-download/script.py"
 ```
 
 ### example-without-venv.bat
 ```batch
 @echo off
-wsl --exec bash -c "python3 /home/user/.../yt-download/script.py"
+wsl --exec bash -c "python3 /home/user/.../yt-mp3-download/script.py"
 ```
