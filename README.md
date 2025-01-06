@@ -1,8 +1,8 @@
+> **I created this for fun and personal use, not for mass distribution, so it might not be ideal for your use case.**
+
 # YouTube Audio Downloader
 
 This is a **Linux-only** YouTube audio downloader that uses [yt-dlp](https://github.com/yt-dlp/yt-dlp) and [tkinter](https://docs.python.org/3/library/tkinter.html) for its user interface.
-
-**I created this for fun and personal use, not for mass distribution, so it might not be ideal for your use case.**
 
 ### Requirements:
 
