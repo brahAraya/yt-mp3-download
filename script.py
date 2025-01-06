@@ -1,7 +1,6 @@
 import os
 import tkinter as tk
-from tkinter import ttk
-from tkinter import filedialog
+from tkinter import ttk, filedialog
 from typing import Dict, Any
 import yt_dlp
 
@@ -12,6 +11,9 @@ def download_mp3(url: str, audio_format: str, audio_quality: str) -> None:
     download_path = ask_for_download_path()
     if not download_path:
         print('No download folder selected. Aborting download.')
+        return
+    if not os.path.exists(download_path):
+        print('Download path does not exist. Aborting download.')
         return
     options: Dict[str, Any] = {
         'format': 'bestaudio/best',
@@ -31,8 +33,10 @@ def download_mp3(url: str, audio_format: str, audio_quality: str) -> None:
             print(f'Downloading audio file from video: {sanitized_url}')
             ydl.download([sanitized_url])
             print('Download completed.')
-        except Exception as e:
+        except yt_dlp.utils.DownloadError as e:
             print(f'Error downloading audio file: {e}')
+        except Exception as e:
+            print(f'Unexpected error: {e}')
 
 def remove_playlist_param(url: str) -> str:
     return url.split(PLAYLIST_URL_PARAM)[0] if PLAYLIST_URL_PARAM in url else url
@@ -69,13 +73,7 @@ def draw_main_window() -> None:
 def ask_for_download_path() -> str:
     root = tk.Tk()
     root.withdraw()
-    screen_width = 400
-    screen_height = 100
-    x_offset = 100
-    y_offset = 100
-    root.geometry(f'{screen_width}x{screen_height}+{x_offset}+{y_offset}')
-    folder_selected = filedialog.askdirectory(title='Select Download Folder')
-    root.quit()
+    folder_selected = filedialog.askdirectory(title='Select Download Path')
     return folder_selected
 
 if __name__ == '__main__':
