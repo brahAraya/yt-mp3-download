@@ -15,14 +15,14 @@ sudo apt-get install python3-tk
 
 To run this program on Windows, you must clone this repo in a [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) environment and execute it from the terminal. You can also create a batch file to directly run the Python script with a simple double-click:
 
-### example-with-venv.bat
-```batch
-@echo off
-wsl --exec bash -c "source /home/user/.../yt-mp3-download/venv/bin/activate && python3 /home/user/.../yt-mp3-download/script.py"
-```
-
 ### example-without-venv.bat
 ```batch
 @echo off
 wsl --exec bash -c "python3 /home/user/.../yt-mp3-download/script.py"
+```
+
+### example-with-venv.bat
+```batch
+@echo off
+wsl --exec bash -c "source /home/user/.../yt-mp3-download/venv/bin/activate && python3 /home/user/.../yt-mp3-download/script.py"
 ```
