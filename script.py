@@ -24,6 +24,6 @@ def download_mp3(url):
             print(f"Error downloading audio file: {e}")
 
 
-url_video = input("Paste the video URL: ")
+video_url = input("Paste the video URL: ")
 
-download_mp3(url_video)
+download_mp3(video_url)
