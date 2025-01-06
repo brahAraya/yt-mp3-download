@@ -4,7 +4,7 @@
 
 This is a **Linux-only** YouTube audio downloader that uses [yt-dlp](https://github.com/yt-dlp/yt-dlp) and [tkinter](https://docs.python.org/3/library/tkinter.html) for its user interface.
 
-### Requirements:
+### Requirements
 
 - tkinter *(This command is for Debian-based distros only; check your distro’s installation process for others)*
 ```shell
